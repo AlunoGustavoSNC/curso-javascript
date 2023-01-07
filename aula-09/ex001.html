@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Aula 09 | DOM</title>
+
+    <link rel="stylesheet" href="../style.css">
+
+    <style>
+
+        div{
+            margin: 20px;
+        }
+
+        div span{
+            background-color: aqua;
+            color: black;
+            border: 1px solid;
+            width: 150px;
+            text-align: center;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Document Object Model (DOM)</h1>
+    <p>Aprendendo a usar <strong>DOM</strong> em JavaScript</p>
+    <p>Aqui vai o resultado</p>
+    <div><span>clique em mim</span></div>
+
+    <p id="introducao" class="pi">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae quibusdam nostrum suscipit fugit impedit culpa veritatis fuga, iusto maxime, adipisci perspiciatis eligendi odit nesciunt laudantium voluptas magnam soluta eum deserunt.</p>
+
+    <p class="pi">Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci dignissimos temporibus, autem omnis porro vel, illo exercitationem natus ullam accusamus dolor est at inventore odit asperiores. Debitis molestiae et reprehenderit!</p>
+
+    <script>
+        var corpo = document.body
+        var p1 = window.document.getElementsByTagName('p')[0]
+        p1.style.color = 'blue'
+        corpo.style.background = 'green'
+
+        var pInt = document.getElementById('introducao')
+        pInt.style.color = 'red'
+
+        var pi = document.getElementsByClassName('pi')[1]
+        pi.style.background = 'grey'
+
+        document.write(p1.innerText + '  "innerText" <br>')
+        document.write(p1.innerHTML + '  "innerHTML"')
+    </script>
+</body>
+</html>

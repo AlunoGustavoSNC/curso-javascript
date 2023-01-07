@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 06 | JavaScript</title>
+
+    <style>
+        body{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgb(67, 67, 67);
+            color: white;
+        }
+
+        h1{
+            text-align: center;
+        }
+        p{
+            text-align: justify;
+            margin: 30px;
+        }
+
+        code{
+            font-size: 1.3em;
+            color: rgb(230, 21, 21);
+        }
+    </style>
+</head>
+<body>
+    <h1>Tratamento de dados</h1>
+    <p>Existe diversos meios de fazer conversão, algumas delas são</p>
+    <ul>
+        <li><code> Number.parseInt(n) </code> ou  apenas <code>parseInt(n) </code> </li>
+        <li><code> Number.parseFloat(n) </code> ou <code> apenas parseFloat(n) </code></li>
+    </ul>
+    <p>Também é possivel utilizar apenas <code>Number(n)</code> onde o javascrip escolhe automaticamente qual utilizar</p>
+
+    <script>
+        /*  O + serve para adição e concatenação
+        (number + number) = adição
+        (string + strimg) = concatenação
+        (string + number) = concatenação */
+
+        var n1 = Number.parseInt(window.prompt('Digite um número'))
+        var n2 = Number.parseInt(window.prompt('Digite outro número'))
+        var soma = n1 + n2
+        window.alert('a soma dos valores é ' + soma)
+
+        /*  Esse código tbm funcionaria utilizando o código
+
+            var n1 = window.prompt('Digite um número')
+        var n2 = window.prompt('Digite outro número')
+        var soma = Number.parseInt(n1) + Number.parseInt(n2)
+        window.alert(`a soma dos valores é ${soma}`)*/
+
+    </script>
+</body>
+</html>
