@@ -25,27 +25,14 @@ footer{
     margin: 30px;
 }
 
-#res{
-    border: 1px solid black;
-    width: 80%;
-    height: 20px;
-    padding: 10px;
-    border-radius: 10px;
-    margin-top: 10px
-}
-
 #btn{
-    font-size: 13pt;
+    background-color: white;
+    padding: 5px;
     border-radius: 5px;
-    margin-top: 10px;
-    transition: 0.3s;
+    border: 2px black solid;
 }
 
-#btn:hover{
-    background-color: rgb(157, 255, 157);
-    transition: 0.3s;
-}
-
-input{
-    margin-bottom: 10px;
+#btn:active{
+    border: 2px green solid;
+    color: green;
 }
