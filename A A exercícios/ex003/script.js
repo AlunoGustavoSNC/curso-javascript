@@ -8,19 +8,30 @@ function contar(){
     if(inicio.value.length == 0 || fim.value.length == 0 || passo.value.length == 0){
         window.alert('[ERRO] Faltam dados')
     }
-    else/*if(inicio.value < fim.value)*/{
-    
-        /*for(var i = 0; inicio.value < fim.value; i += passo.value){
-            res.innerHTML = ('deu certo')
-        }*/
+    else if(passo.value == 0 || passo.value < 0){
+        window.alert('[ERRO] passo com valor 0 ou menor')
     }
-    /*else if(inicio.value > fim.value){
+    else{
+        res.innerHTML = 'Contando: '
 
-        for(var i = 0; inicio < fim; i -= passo){
+        let i = Number(inicio.value)
+        let f = Number(fim.value)
+        let p = Number(passo.value)
 
-            var res = document.querySelector('#res')
-            res.innerHTML(`${res} `)
+        if(i > f){
+            for(i; i >= f; i -= p){
+
+                res.innerHTML += (`${i} `)
+            }
+            res.innerHTML += (' FIM!!!')  
         }
-    }*/
+        else{
+            for(i; i <= f; i += p){
+
+                res.innerHTML += (`${i} `)
+            }
+            res.innerHTML += (' FIM!!!') 
+        }
+    }
 }
 
