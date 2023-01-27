@@ -1,0 +1,43 @@
+body{
+    background-color: rgb(42, 97, 200);
+    font: normal 13pt verdana;
+}
+
+header{
+    color: white;
+    text-align: center;
+}
+
+section{
+    background-color: white;
+    width: 500px;
+
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding: 15px;
+    margin: auto;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.378);
+}
+
+footer{
+    color: white;
+    text-align: center;
+    margin: 30px;
+}
+
+.btn{
+    margin-top: 5px;
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
+    border: 2px black solid;
+}
+
+.btn:active{
+    border: 2px green solid;
+    color: green;
+}
+
+#flist{
+    width: 200px;
+}
