@@ -3,6 +3,9 @@ const subTitulo = []
 const p = []
 const section = []
 
+const criarComent = []
+const ti = []
+
 // Modificações no Header:
 
 document.head.innerHTML += '<link rel="preconnect" href="https://fonts.googleapis.com">'
@@ -17,7 +20,7 @@ document.head.innerHTML += '<link href="https://fonts.googleapis.com/css2?family
 document.body.style.display = 'flex'
 document.body.style.justifyContent = 'center'
 document.body.style.flexDirection = 'column'
-document.body.style.minWidth = '250px'
+document.body.style.minWidth = '400px'
 document.body.style.fontFamily = 'poppins, sans-serif'
 
 // Header
@@ -74,7 +77,7 @@ main.style.alignSelf = 'center'
 
 titulo[1] = document.createElement('h1')
 main.appendChild(titulo[1])
-titulo[1].innerHTML = 'Projeto com objetivo de  Fixar Conhecimentos Básicos de JavaScript'
+titulo[1].innerHTML = 'Pequenos testes com objetivo de  Fixar Conhecimentos Básicos de JavaScript'
 titulo[1].style.textAlign = 'center'
 titulo[1].style.fontSize = '2em'
 
@@ -85,7 +88,7 @@ main.appendChild(section[0])
 
 subTitulo[0] = document.createElement('h2')
 section[0].appendChild(subTitulo[0])
-subTitulo[0].innerHTML = 'Crie um Comentário: (Em desenvolvimento)'
+subTitulo[0].innerHTML = 'Crie um Comentário:'
 subTitulo[0].style.fontSize = '1.6em'
 
 // Form
@@ -95,6 +98,9 @@ const input = []
 
 const form = document.createElement('form')
 section[0].appendChild(form)
+form.style.display = 'flex'
+form.style.flexDirection = 'column'
+form.style.alignSelf = 'right'
 
 label[0] = document.createElement('p')
 form.appendChild(label[0])
@@ -115,7 +121,7 @@ label[1].innerHTML = 'Comentário:'
 input[1] = document.createElement('textarea')
 form.appendChild(input[1])
 input[1].setAttribute('type', 'text')
-input[1].style.width = '60%'
+input[1].style.maxWidth = '400px'
 input[1].style.height = '150px'
 input[1].style.padding = '5px'
 input[1].style.fontSize = '1.1em'
@@ -128,14 +134,10 @@ form.appendChild(input[2])
 input[2].setAttribute('type', 'button')
 input[2].setAttribute('value', 'Comentar')
 input[2].setAttribute('onclick', 'comentar()')
+input[2].style.maxWidth = '100px'
 
 let hr = document.createElement('hr')
 form.appendChild(hr)
-
-//section comentários
-
-section[1] = document.createElement('section')
-section[0].appendChild(section[1])
 
 for(let i in label){
     label[i].style.margin = '25px 0 0px 0'
@@ -143,20 +145,25 @@ for(let i in label){
 }
 // Comentário
 
-function criarComent(t, c){
-    const criarComent = []
-    const ti = []
-    
-    criarComent[0] = document.createElement('section')
-    section[1].appendChild(criarComent[0])
+function cComent(t, c){
+    criarComent.push(document.createElement('section')) 
+    section[0].appendChild(criarComent[criarComent.length - 1])
 
-    ti[0] = document.createElement('h3')
-    criarComent[0].appendChild(ti[0])
-    ti[0].innerHTML = t
+    ti.push(document.createElement('h3'))
+    criarComent[criarComent.length - 1].appendChild(ti[ti.length - 1])
+    ti[ti.length - 1].innerHTML = t
 
-    p[0] = document.createElement('p')
-    criarComent[0].appendChild(p[0])
-    p[0].innerHTML = c
+    p.push(document.createElement('p'))
+    criarComent[criarComent.length - 1].appendChild(p[p.length - 1])
+    p[p.length - 1].innerHTML = c
+
+    for(let i in criarComent){
+        criarComent[i].style.border = '1px solid #aaa'
+        criarComent[i].style.maxWidth = '100%'
+        criarComent[i].style.padding = '10px'
+        criarComent[i].style.borderRadius = '10px'
+        criarComent[i].style.marginBottom = '15px'
+    }
 }
 
 function comentar(){
@@ -169,7 +176,7 @@ function comentar(){
         window.alert('[ERRO] Informações Faltando')
     }
     else{
-        criarComent(input[0].value, input[1].value)
+        cComent(input[0].value, input[1].value)
     }
 
 }
@@ -181,5 +188,5 @@ for(let i in section){
     section[i].style.maxWidth = '100%'
     section[i].style.padding = '10px'
     section[i].style.borderRadius = '10px'
-
+    section[i].style.marginBottom = '30px'
 }
